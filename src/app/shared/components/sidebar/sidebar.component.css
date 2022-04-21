@@ -1,0 +1,36 @@
+* {
+  font-family: 'Shippori Antique B1', sans-serif;
+}
+
+.logo {
+  color: #00BFFF;
+  font-size: 23px;
+  font-weight: 800;
+  background-color: white;
+  height: 65px;
+}
+
+.layout {
+  min-height: 100vh;
+  background-color: white;
+}
+
+nz-sider {
+  overflow: auto;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  line-height: 2.9;
+}
+
+.white {
+  background-color: white;
+}
+
+.sub-2 {
+  color: #00BFFF;
+  font-size: 20px;
+  font-weight: 800;
+  background-color: white;
+  top: 0%;
+}

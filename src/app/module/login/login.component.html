@@ -1,0 +1,46 @@
+<form class="container" onclick="onclick" id="loginform" (ngSubmit)="onSubmit()" #loginform="ngForm">
+  <div class="top"></div>
+  <div class="bottom"></div>
+  <div class="center">
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 5 79 66">
+      <g id="Group_1" data-name="Group 1" transform="translate(-239 -128)">
+        <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(239 128)" fill="#fff" stroke="#00bfff" stroke-width="2">
+          <rect width="79" height="66" rx="15" stroke="none"/>
+          <rect x="1" y="1" width="77" height="64" rx="14" fill="none"/>
+        </g>
+        <path id="Rectangle_5" data-name="Rectangle 5" d="M14,0H31a0,0,0,0,1,0,0V18A15,15,0,0,1,16,33H0a0,0,0,0,1,0,0V14A14,14,0,0,1,14,0Z" transform="translate(240 128)" fill="rgba(0,191,255,0.97)"/>
+        <path id="Rectangle_2" data-name="Rectangle 2" d="M15,0h3a0,0,0,0,1,0,0V29a0,0,0,0,1,0,0H7a7,7,0,0,1-7-7V15A15,15,0,0,1,15,0Z" transform="translate(244 164)" fill="#00bfff"/>
+        <path id="Rectangle_3" data-name="Rectangle 3" d="M15,0h3a0,0,0,0,1,0,0V43a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V15A15,15,0,0,1,15,0Z" transform="translate(269 150)" fill="#00bfff"/>
+        <path id="Rectangle_4" data-name="Rectangle 4" d="M15,0h3a0,0,0,0,1,0,0V53a4,4,0,0,1-4,4H0a0,0,0,0,1,0,0V15A15,15,0,0,1,15,0Z" transform="translate(294 136)" fill="#00bfff"/>
+      </g>
+    </svg>
+
+
+    <h2>Please Sign In</h2>
+
+    <input matInput
+          required
+          email
+          placeholder="Email"
+          [(ngModel)]="userInfo.userName"
+          #username="ngModel"
+          name="username"/>
+
+    <input type="password"
+          matInput
+          required
+          minlength="8"
+          [pattern]="passwordPattern"
+          placeholder="Passwords"
+          [(ngModel)]="userInfo.password"
+          #password="ngModel"
+          name="password"/>
+
+    <button nz-button nzType="primary" [nzSize]="size" nzShape="round" type="submit">
+      Log in
+    </button>
+
+    <h2>&nbsp;</h2>
+  </div>
+</form>
