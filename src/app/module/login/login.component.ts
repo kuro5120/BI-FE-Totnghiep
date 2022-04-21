@@ -30,12 +30,12 @@ export class LoginComponent implements OnInit {
   onSubmit() {
 
     if (!this.loginform.valid){
-      this.toast.error({detail:"ERROR",summary:'Incorrect username or password', duration: 2000});
+      this.toast.error({detail:"ERROR",summary:'Incorrect username or password', duration: 3000});
       return;
     }
 
     if (this.loginform.valid){
-      this.toast.success({detail:"SUCCESS",summary:'login successfully', duration: 2000});
+      this.toast.success({detail:"SUCCESS",summary:'login successfully', duration: 3000});
       this.router.navigate(['/home/home/BusinessIncome'])
     }
 
