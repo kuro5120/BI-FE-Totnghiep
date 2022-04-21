@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   public onLogoutClick(){
-    this.toast.info({detail:"INFO",summary:'You have logged out.', duration: 1000});
+    this.toast.info({detail:"INFO",summary:'You have logged out.', duration: 2000});
     this.router.navigate(['/login']);
   }
 
