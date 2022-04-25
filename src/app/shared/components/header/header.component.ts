@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { NzButtonSize } from 'ng-zorro-antd/button';
+import { NzPlacementType } from 'ng-zorro-antd/dropdown';
 
 import { NgToastService } from 'ng-angular-popup';
 
@@ -11,7 +13,7 @@ import { NgToastService } from 'ng-angular-popup';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( private router: Router, private toast: NgToastService) { }
+  constructor( private router: Router, private toast: NgToastService,) { }
 
   ngOnInit(): void {
   }
@@ -26,4 +28,6 @@ export class HeaderComponent implements OnInit {
   }
 
   size: NzButtonSize = 'large';
+
+  listOfPosition: NzPlacementType[] = ['bottomCenter'];
 }

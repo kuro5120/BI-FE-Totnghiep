@@ -1,13 +1,14 @@
 .log-out-btn {
   position: absolute;
-  right: 0;
-  top: 10px;
+  right: 20px;
+  top: 13px;
 }
 
 [nz-button] {
   margin-right: 8px;
   margin-bottom: 12px;
 }
+
 
 nz-button-group [nz-button] {
   margin-right: 0;
