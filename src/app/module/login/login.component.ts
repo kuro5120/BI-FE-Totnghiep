@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 
@@ -13,21 +13,29 @@ import { NgToastService } from 'ng-angular-popup';
 export class LoginComponent implements OnInit {
 
   @ViewChild('loginform')
-  loginform!:NgForm;
+  loginform!: NgForm;
+
+  LogInForm!: FormGroup;
+
+  passwordPattern = /^(?=(.*[A-Z]){1,})(?=(.*[\d]){1,}).{8,}$/;
+
+  constructor( private router: Router,
+    private toast: NgToastService,
+    private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.LogInForm = this.fb.group({
+      userName: "",
+      password: "",
+    });
+  }
 
   userInfo = {
     userName: '',
     password: '',
   };
 
-  passwordPattern = /^(?=(.*[A-Z]){1,})(?=(.*[\d]){1,}).{8,}$/;
-
-  constructor( private router: Router, private toast: NgToastService) { }
-
-  ngOnInit(): void {
-  }
-
-  onSubmit() {
+  login() {
 
     if (!this.loginform.valid){
       this.toast.error({detail:"ERROR",summary:'Incorrect username or password', duration: 3000});
@@ -36,7 +44,7 @@ export class LoginComponent implements OnInit {
 
     if (this.loginform.valid){
       this.toast.success({detail:"SUCCESS",summary:'login successfully', duration: 3000});
-      this.router.navigate(['/home/home/BusinessIncome'])
+      this.router.navigate(['/home/BusinessIncome'])
     }
 
     console.log(this.loginform.value);

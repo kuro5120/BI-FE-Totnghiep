@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
@@ -35,6 +36,9 @@ import { DatatreeComponent } from './module/dashboard/datatree/datatree.componen
 
 import { TokenService } from './Service/token.service';
 
+import { ReactiveFormsModule } from "@angular/forms";
+
+import { authInterceptorProviders } from './_Helpers/auth.interceptor';
 
 registerLocaleData(vi);
 
@@ -57,7 +61,10 @@ registerLocaleData(vi);
     RouterModule,
     AppRoutingModule,
     FormsModule,
+
     HttpClientModule,
+    ReactiveFormsModule,
+
     BrowserAnimationsModule,
 
     NzButtonModule,
@@ -72,7 +79,8 @@ registerLocaleData(vi);
     PowerBIEmbedModule,
   ],
   providers: [
-    { provide: NZ_I18N, useValue: vi_VN }
+    { provide: NZ_I18N, useValue: vi_VN },
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

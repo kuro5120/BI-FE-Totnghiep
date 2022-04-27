@@ -28,27 +28,27 @@ const routes:  Routes = [
 
     children: [
       {
-        path: 'home/BusinessIncome',
+        path: 'BusinessIncome',
         component: DashboardComponent
       },
       {
-        path: 'home/Expenses',
+        path: 'Expenses',
         component: ProductComponent
       },
       {
-        path: 'home/ComparativeCosts',
+        path: 'ComparativeCosts',
         component: CustomerBIComponent
       },
       {
-        path: 'home/orderlist',
+        path: 'orderlist',
         component: OrderlistBiComponent
       },
       {
-        path: 'home/Company',
+        path: 'Company',
         component: CompanyComponent
       },
       {
-        path: 'home/Contact',
+        path: 'Contact',
         component: ContactComponent
       },
       {
