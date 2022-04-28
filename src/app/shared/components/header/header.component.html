@@ -1,13 +1,20 @@
   <ng-container *ngFor="let position of listOfPosition">
+
+    <button nz-button nzType="primary" [nzSize]="size" nzShape="round" class="noctice-btn">
+      <i nz-icon nzType="bell" nzTheme="outline"></i>
+    </button>
+
     <button nz-button nzType="primary" [nzSize]="size" nzShape="round" class="log-out-btn" nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="position">
       <i nz-icon nzType="user" nzTheme="outline"></i>
       ADMIN
     </button>
+
     <nz-dropdown-menu #menu="nzDropdownMenu">
       <ul nz-menu>
         <li nz-menu-item (click)="onLogoutClick()">Log out</li>
       </ul>
     </nz-dropdown-menu>
+
   </ng-container>
 
 

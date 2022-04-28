@@ -5,6 +5,10 @@ import { NzButtonSize } from 'ng-zorro-antd/button';
 
 import { NgToastService } from 'ng-angular-popup';
 
+import { AuthService } from 'src/app/Service/AuthService/auth.service';
+
+import { UserAuthentication } from 'src/Model/User.model';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,10 +21,11 @@ export class LoginComponent implements OnInit {
 
   LogInForm!: FormGroup;
 
-  passwordPattern = /^(?=(.*[A-Z]){1,})(?=(.*[\d]){1,}).{8,}$/;
+  passwordPattern = /^(?=(.*[A-Z]){1,})(?=(.*[\d]){1,}).{6,}$/;
 
   constructor( private router: Router,
     private toast: NgToastService,
+    private authService: AuthService,
     private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -37,16 +42,19 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-    if (!this.loginform.valid){
-      this.toast.error({detail:"ERROR",summary:'Incorrect username or password', duration: 3000});
-      return;
-    }
-
-    if (this.loginform.valid){
-      this.toast.success({detail:"SUCCESS",summary:'login successfully', duration: 3000});
-      this.router.navigate(['/home/BusinessIncome'])
-    }
-
+    const { userName, password } = this.userInfo;
+    this.authService.login(userName, password).subscribe(
+      data => {
+        this.toast.success({detail:"SUCCESS",summary:'login successfully', duration: 3000});
+        this.router.navigate(['/home/BusinessIncome'])
+      },
+      err => {
+        if (!this.loginform.valid){
+          this.toast.error({detail:"ERROR",summary:'Incorrect username or password', duration: 3000});
+          return;
+        }
+      }
+    )
     console.log(this.loginform.value);
   }
 

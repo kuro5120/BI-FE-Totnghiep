@@ -21,8 +21,7 @@
 
     <input matInput
           required
-          email
-          placeholder="Email"
+          placeholder="UserName"
           [(ngModel)]="userInfo.userName"
           #username="ngModel"
           name="username"/>
@@ -30,7 +29,7 @@
     <input type="password"
           matInput
           required
-          minlength="8"
+          minlength="6"
           [pattern]="passwordPattern"
           placeholder="Passwords"
           [(ngModel)]="userInfo.password"

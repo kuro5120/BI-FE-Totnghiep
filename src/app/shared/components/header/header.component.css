@@ -4,6 +4,12 @@
   top: 13px;
 }
 
+.noctice-btn {
+  position: absolute;
+  top: 13px;
+  right: 150px;
+}
+
 [nz-button] {
   margin-right: 8px;
   margin-bottom: 12px;
