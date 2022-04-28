@@ -5,6 +5,7 @@ import { NzButtonSize } from 'ng-zorro-antd/button';
 import { NzPlacementType } from 'ng-zorro-antd/dropdown';
 
 import { NgToastService } from 'ng-angular-popup';
+import { TokenStorageService } from 'src/app/Service/TokenStorageService/token-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +14,18 @@ import { NgToastService } from 'ng-angular-popup';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor( private router: Router, private toast: NgToastService,) { }
-
-  ngOnInit(): void {
-  }
+  constructor( private router: Router,
+    private toast: NgToastService,
+    private token: TokenStorageService) { }
 
   log(data: string): void {
     console.log(data);
+  }
+
+  currentUser: any;
+
+  ngOnInit(): void {
+    this.currentUser = this.token.getUser();
   }
 
   public onLogoutClick(){
