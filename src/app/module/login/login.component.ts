@@ -8,6 +8,7 @@ import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from 'src/app/Service/AuthService/auth.service';
 
 import { UserAuthentication } from 'src/Model/User.model';
+import { TokenStorageService } from 'src/app/Service/TokenStorageService/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,10 @@ export class LoginComponent implements OnInit {
   constructor( private router: Router,
     private toast: NgToastService,
     private authService: AuthService,
+    private tokenStorage: TokenStorageService,
     private fb: FormBuilder) {}
+
+  roles: string[] = [];
 
   ngOnInit(): void {
     this.LogInForm = this.fb.group({
@@ -35,7 +39,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  userInfo = {
+
+
+  userInfo: any = {
     userName: '',
     password: '',
   };
@@ -45,6 +51,7 @@ export class LoginComponent implements OnInit {
     const { userName, password } = this.userInfo;
     this.authService.login(userName, password).subscribe(
       data => {
+        this.tokenStorage.saveUser(data);
         this.toast.success({detail:"SUCCESS",summary:'login successfully', duration: 3000});
         this.router.navigate(['/home/BusinessIncome'])
       },

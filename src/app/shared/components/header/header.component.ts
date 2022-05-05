@@ -14,6 +14,8 @@ import { TokenStorageService } from 'src/app/Service/TokenStorageService/token-s
 })
 export class HeaderComponent implements OnInit {
 
+  userDisplayName!: string | null ;
+
   constructor( private router: Router,
     private toast: NgToastService,
     private token: TokenStorageService) { }

@@ -16,11 +16,15 @@ export class TokenStorageService {
   public getToken(): string {
     return sessionStorage.getItem(TOKEN_KEY)!;
   }
-  public saveUser(user: any): void {
+  public saveUser(userName: any): void {
     window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+    window.sessionStorage.setItem(USER_KEY, JSON.stringify(userName));
   }
   public getUser(): any {
-    return JSON.parse(sessionStorage.getItem(USER_KEY)!);
+    const userName = window.sessionStorage.getItem(USER_KEY);
+    if (userName) {
+      return JSON.parse(userName);
+    }
+    return {};
   }
 }
