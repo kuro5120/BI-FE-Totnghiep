@@ -1,13 +1,7 @@
 .log-out-btn {
-  position: fixed;
+  position: absolute;
   right: 20px;
   top: 13px;
-}
-
-.noctice-btn {
-  position: absolute;
-  top: 13px;
-  right: 150px;
 }
 
 [nz-button] {

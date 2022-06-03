@@ -19,8 +19,8 @@ export class CustomerBIComponent implements OnInit {
   embedConfig = {
     type: "report",
     pageName: 'ReportSection9018f9381a0a0efc8af2',
-    id: "191aa98f-5eff-4c94-830e-5110d290f0ad",
-    embedUrl: "https://app.powerbi.com/reportEmbed?reportId=191aa98f-5eff-4c94-830e-5110d290f0ad&groupId=5d7eb339-154b-4789-9664-939d7ee05bb4&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVVTLVdFU1QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJtb2Rlcm5FbWJlZCI6dHJ1ZSwiYW5ndWxhck9ubHlSZXBvcnRFbWJlZCI6dHJ1ZSwiY2VydGlmaWVkVGVsZW1ldHJ5RW1iZWQiOnRydWUsInVzYWdlTWV0cmljc1ZOZXh0Ijp0cnVlLCJza2lwWm9uZVBhdGNoIjp0cnVlfX0%3d",
+    id: "e12e9e57-978c-4439-a04c-64c30d4ac700",
+    embedUrl: "https://app.powerbi.com/reportEmbed?reportId=e12e9e57-978c-4439-a04c-64c30d4ac700&groupId=45d27fb3-c1ed-4776-8860-b0d96aaf223b&w=2&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly9XQUJJLVVTLVdFU1QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0IiwiZW1iZWRGZWF0dXJlcyI6eyJtb2Rlcm5FbWJlZCI6dHJ1ZSwiYW5ndWxhck9ubHlSZXBvcnRFbWJlZCI6dHJ1ZSwiY2VydGlmaWVkVGVsZW1ldHJ5RW1iZWQiOnRydWUsInVzYWdlTWV0cmljc1ZOZXh0Ijp0cnVlLCJza2lwWm9uZVBhdGNoIjp0cnVlfX0%3d",
     accessToken: this.tokenService.accesstoken,
     tokenType: models.TokenType.Aad,
     settings: {
